@@ -129,35 +129,7 @@ return Container(
                 ),
                 FlatButton(
                   child: const Text('Delete', style: TextStyle(color: Colors.white)),
-                  onPressed: () {
-                      else if (value == 'delete') {
-                         showDialog(
-  context: context,
-  builder: (BuildContext context) {
-    return AlertDialog(
-      title: Text('Are You Sure'),
-      content: Text('Do you want to delete ${task['nim']}?'),
-      actions: <Widget>[
-        FlatButton(
-          child: Text('No'),
-          onPressed: () {
-            Navigator.pop(context);
-          },
-        ),
-        FlatButton(
-          child: Text('Delete'),
-          onPressed: () {
-            document.reference.delete();
-            Navigator.pop(context);
-            setState(() {});
-          },
-        ),
-      ],
-    );
-  },
-); 
-                      }
-                  },
+                  onPressed: () {},
                 ),
               ],
             ),
