@@ -126,6 +126,7 @@ return Container(
                 FlatButton(
                   child: const Text('Edit', style: TextStyle(color: Colors.white)),
                   onPressed: () {},
+                ),
                 FlatButton(
                   child: const Text('Delete', style: TextStyle(color: Colors.white)),
                   onPressed: () {},
