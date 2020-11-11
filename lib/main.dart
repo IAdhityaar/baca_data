@@ -125,65 +125,10 @@ return Container(
               children: <Widget>[
                 FlatButton(
                   child: const Text('Edit', style: TextStyle(color: Colors.white)),
-                  onPressed: () {
-                      //util.showLoading(context, true);
-                            _showEditDialog(_r);
-                  },
-                ),
-               ),
-              ),
-                ),
-                  SizedBox(
-                    width: 5,
-                  ),
-                  Material(
-                    color: Colors.transparent,
-                    child: Center(
-                      child: Ink(
-                        decoration: const ShapeDecoration(
-                          color: Colors.red,
-                          shape: CircleBorder(),
-                        ),
+                  onPressed: () {},
                 FlatButton(
                   child: const Text('Delete', style: TextStyle(color: Colors.white)),
-                  onPressed: () {
-                      String nim = Mhs["nim"].toString();
-                            Map<String, String> mRequest = {
-                              "nama": "",
-                              "kelas": "",
-                              "cmd": "delete_data_by_nim",
-                              "nim": nim
-                            };
-                            util.showAlert(context, "Are you sure ?", "Delete Data, nim = ($nim)").then((b){
-                              if (b == true){
-                                util.showLoading(context, true);
-                                util.httpPost(util.url_api, mRequest).then((data){
-                                  //print(data);
-                                  var jObject = json.decode(data);
-                                  if (jObject != null){
-                                    String v_desc = jObject["desc"];
-                                    _statusText = v_desc;
-                  },
-                  _loadData(_txtSearch.text).then((d){
-                                    util.showLoading(context, false);
-                                    setState(() {
-
-                                    });
-                                  });
-
-                                });
-                              }
-                              ),
-                      ),
-                    ),
-                  )
-                ],
-              ),
-            ),
-          ],
-        ),
-      ));
-    }
+                  onPressed: () {},
                 ),
               ],
             ),
