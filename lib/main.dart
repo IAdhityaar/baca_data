@@ -140,6 +140,32 @@ return Container(
   );
 }
 
+showDialog(
+  context: context,
+  builder: (BuildContext context) {
+    return AlertDialog(
+      title: Text('Are You Sure'),
+      content: Text('Do you want to delete ${mhs['nim']}?'),
+      actions: <Widget>[
+        FlatButton(
+          child: Text('No'),
+          onPressed: () {
+            Navigator.pop(context);
+          },
+        ),
+        FlatButton(
+          child: Text('Delete'),
+          onPressed: () {
+            document.reference.delete();
+            Navigator.pop(context);
+            setState(() {});
+          },
+        ),
+      ],
+    );
+  },
+);
+
   @override
   Widget build(BuildContext context) {
     return GridView.builder(
