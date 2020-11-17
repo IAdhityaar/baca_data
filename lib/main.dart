@@ -6,8 +6,7 @@ import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 
 Future<List<Mhs>> fetchMhss(http.Client client) async {
-  final response = await client
-      .get('https://fluttertugas.000webhostapp.com/readDatajson.php');
+  final response = await client.get('https://iadhityaranius.000webhostapp.com/readDatajson.php');
 
   // Use the compute function to run parseMhss in a separate isolate.
   return compute(parseMhss, response.body);
@@ -21,7 +20,7 @@ List<Mhs> parseMhss(String responseBody) {
 }
 
 void deleteData(String nim) {
-  var url = "https://fluttertugas.000webhostapp.com/deleteData.php";
+  var url = "https://iadhityaranius.000webhostapp.com/deleteData.php";
   http.post(url, body: {
     'nim': nim,
   });
@@ -212,7 +211,7 @@ class _EditDataState extends State<EditData> {
   }
 
   void editData() async {
-    var url = "https://fluttertugas.000webhostapp.com/editData.php";
+    var url = "https://iadhityaranius.000webhostapp.com/editData.php";
     await http.post(url, body: {
       "nimA": nim,
       "nimB": nimController.text,
